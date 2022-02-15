@@ -10,16 +10,16 @@ document.getElementById('apply-btn').addEventListener('click',function(){
         { 
              const aft= document.getElementById('total-price')
              const aftxt=parseInt(aft.innerText)
-             aft.innerText=aftxt-100
+             const discount=aftxt/10
+             const ttt=aftxt-discount
+             aft.innerText=ttt
+             document.getElementById('discount').innerText=discount
+            
              document.getElementById('applied-text').style.display='block'
              document.getElementById('nt').style.display='none'
               prm.value=''      
         }
     })
-
- 
-
- 
 function btn(bid,tid,p)
 {
     document.getElementById(bid).addEventListener('click',function()
@@ -42,7 +42,6 @@ function totalcost()
    const dp=txt('delivery-cost')
    const t=mp+sp+dp+bp
    document.getElementById('total-price').innerText=t
-
 }
 btn('eightGB','memory-cost',100)
 btn('sixteenGB','memory-cost',200)
@@ -51,7 +50,3 @@ btn('ssd2','storage-cost',500)
 btn('ssd3','storage-cost',800)
 btn('free-delivery','delivery-cost',0)
 btn('paid-delivery','delivery-cost',100)
-//  btn('',0,'applied-text',10)
-
- 
- 
